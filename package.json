@@ -1,0 +1,25 @@
+{
+  "name": "parkclever-lookup-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindoroLabs/ParkClever-lookup-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MindoroLabs/ParkClever-lookup-api/issues"
+  },
+  "homepage": "https://github.com/MindoroLabs/ParkClever-lookup-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
