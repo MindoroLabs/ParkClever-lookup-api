@@ -7,6 +7,12 @@ const PORT = 3000;
 
 app.use(cors());
 
+// app.use(cors({
+//   origin: 'https://tame-emu-4.loca.lt',
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
+
 app.use(express.json());
 
 
