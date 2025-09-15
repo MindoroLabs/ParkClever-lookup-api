@@ -98,6 +98,20 @@ const transporter = nodemailer.createTransport({
 // function formatLocalTime(utcValue) {
 //   return dayjs.utc(utcValue).local().format("YYYY-MM-DD HH:mm");
 // }
+function formatUKDateTime(dateString) {
+  return new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/London",
+    day: "2-digit",
+    month: "short",   // "Sep" → use "long" for "September"
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,    // 24-hour format
+  }).format(new Date(dateString));
+}
+
+
+
 app.post("/send-booking-email", async (req, res) => {
   const { bookingData, driverProfile, providerProfile } =
     req.body;
@@ -108,7 +122,8 @@ app.post("/send-booking-email", async (req, res) => {
     // const endDate = new Date(
     //   bookingData.bookingForm.endTime
     // ).toLocaleDateString();
-    const bookingDates = `${(bookingData.bookingForm.startTime)} to ${(bookingData.bookingForm.endTime)}`;
+    // const bookingDates = `${(bookingData.bookingForm.startTime)} to ${(bookingData.bookingForm.endTime)}`;
+    const bookingDates = `${formatUKDateTime(bookingData.bookingForm.startTime)} - ${formatUKDateTime(bookingData.bookingForm.endTime)}`;
 
 
 
