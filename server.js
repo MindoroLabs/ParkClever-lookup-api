@@ -95,9 +95,9 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-function formatLocalTime(utcValue) {
-  return dayjs.utc(utcValue).local().format("YYYY-MM-DD HH:mm");
-}
+// function formatLocalTime(utcValue) {
+//   return dayjs.utc(utcValue).local().format("YYYY-MM-DD HH:mm");
+// }
 app.post("/send-booking-email", async (req, res) => {
   const { bookingData, driverProfile, providerProfile } =
     req.body;
@@ -108,7 +108,7 @@ app.post("/send-booking-email", async (req, res) => {
     // const endDate = new Date(
     //   bookingData.bookingForm.endTime
     // ).toLocaleDateString();
-    const bookingDates = `${formatLocalTime(bookingData.bookingForm.startTime)} to ${formatLocalTime(bookingData.bookingForm.endTime)}`;
+    const bookingDates = `${(bookingData.bookingForm.startTime)} to ${(bookingData.bookingForm.endTime)}`;
 
 
 
